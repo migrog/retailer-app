@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Restaurant</string>
+
+    <!-- MODULOS -->
+    <string name="title_activity_principal">PrincipalActivity</string>
+    <string name="title_catalog">Catálogo</string>
+    <string name="title_orders">Pedidos</string>
+    <string name="title_menu">Menú</string>
+
+    <string name="DOI_KEY">doi</string>
+    <string name="DOI_NRO_KEY">doi_nro</string>
+
+    <!-- FIREBASE -->
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="default_notification_channel_name" translatable="true">News</string>
+    <string name="fcm_message">FCM Message</string>
+    <string name="msg_subscribed">Subscribed to news topic</string>
+    <string name="msg_subscribe_failed">Failed to subscribe to news topic</string>
+    <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="title_activity_inventory">Productos</string>
+    <string name="title_activity_customers">Clientes</string>
+    <string name="inventory_fragment_label">Lista de productos</string>
+
+
+</resources>
