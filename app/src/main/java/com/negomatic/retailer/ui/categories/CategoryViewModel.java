@@ -15,7 +15,7 @@ public class CategoryViewModel extends ViewModel {
     private ItemRepository repository;
 
     @Inject CategoryViewModel(ItemRepository repository){this.repository = repository;}
-    public void init(){
+    public void  init(){
         if(this.list!=null){
             return;
         }

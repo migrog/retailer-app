@@ -10,6 +10,7 @@ import com.negomatic.retailer.ui.customers.viewcustomer.ViewCustomerActivity;
 import com.negomatic.retailer.ui.inventory.InventoryActivity;
 import com.negomatic.retailer.ui.inventory.newitem.NewItemActivity;
 import com.negomatic.retailer.ui.inventory.viewitem.ViewItemActivity;
+import com.negomatic.retailer.ui.orders.orderdetail.OrderDetailActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -46,5 +47,8 @@ public abstract class ActivityModule {
 
     @ContributesAndroidInjector(modules = FragmentModule.class)
     abstract ViewCustomerActivity contributeViewCustomerActivity();
+
+    @ContributesAndroidInjector(modules = FragmentModule.class)
+    abstract OrderDetailActivity contributeOrderDetailActivity();
 
 }

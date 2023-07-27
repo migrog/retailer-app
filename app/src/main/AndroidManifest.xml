@@ -22,7 +22,10 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-
+        <activity
+            android:name=".ui.orders.orderdetail.OrderDetailActivity"
+            android:exported="false"
+            android:theme="@style/Apptheme.ActionBar"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -89,8 +92,7 @@
         <activity
             android:name=".ui.inventory.viewitem.ViewItemActivity"
             android:label="Detalle de producto"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.cart.CartActivity"
             android:noHistory="true"
@@ -122,7 +124,7 @@
         <activity
             android:name=".ui.customers.viewcustomer.ViewCustomerActivity"
             android:label="Detalle de cliente"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
