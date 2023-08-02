@@ -15,6 +15,7 @@ import com.negomatic.retailer.ui.inventory.viewitem.ViewItemFragment;
 import com.negomatic.retailer.ui.menu.MenuFragment;
 import com.negomatic.retailer.ui.menu.create.MenuCreateBottomSheetFragment;
 import com.negomatic.retailer.ui.orders.OrdersFragment;
+import com.negomatic.retailer.ui.orders.orderdetail.OrderDetailFragment;
 import com.negomatic.retailer.ui.unittypes.NewUnitTypeDialogFragment;
 import com.negomatic.retailer.ui.unittypes.UnitTypesBottomSheetFragment;
 
@@ -74,6 +75,8 @@ public abstract class FragmentModule {
     @ContributesAndroidInjector
     abstract DocumentTypesBottomSheetFragment contributeDocumentTypesBottomSheetFragment();
 
+    @ContributesAndroidInjector
+    abstract OrderDetailFragment contributeOrderDetailFragment();
 
 
 }

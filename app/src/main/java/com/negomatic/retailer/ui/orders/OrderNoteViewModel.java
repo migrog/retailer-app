@@ -3,8 +3,8 @@ package com.negomatic.retailer.ui.orders;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.negomatic.retailer.entity.Item;
 import com.negomatic.retailer.entity.OrderNote;
+import com.negomatic.retailer.entity.OrderNoteItem;
 import com.negomatic.retailer.repository.OrderNoteRepository;
 
 import java.util.ArrayList;
@@ -12,13 +12,15 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-public class OrdersViewModel extends ViewModel {
+public class OrderNoteViewModel extends ViewModel {
     // TODO: Implement the ViewModel
     private LiveData<List<OrderNote>> list;
+    private LiveData<List<OrderNoteItem>> orderNoteItems;
+    private LiveData<OrderNote> order;
     private OrderNoteRepository repository;
 
     @Inject
-    public  OrdersViewModel(OrderNoteRepository repository){this.repository =  repository;}
+    public OrderNoteViewModel(OrderNoteRepository repository){this.repository =  repository;}
     public void init(){
         if(this.list != null){
           return;
@@ -34,5 +36,14 @@ public class OrdersViewModel extends ViewModel {
             found.add(i);
         }
         return found;
+    }
+
+    public LiveData<OrderNote> getById(int id){
+        this.order = repository.getById(id);
+        return order;
+    }
+    public LiveData<List<OrderNoteItem>> getOrderNoteItems(int orderNoteId){
+        this.orderNoteItems = repository.getOrderNoteItems(orderNoteId);
+        return this.orderNoteItems;
     }
 }

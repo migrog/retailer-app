@@ -88,4 +88,10 @@ public class OrderNoteRepository {
     public LiveData<List<OrderNote>> list(){
         return dao.ListOrder();
     }
+    public LiveData<OrderNote> getById(int id){
+        return dao.getById(id);
+    }
+    public LiveData<List<OrderNoteItem>> getOrderNoteItems(int orderNoteId){
+        return dao.getOrderNoteItems(orderNoteId);
+    }
 }

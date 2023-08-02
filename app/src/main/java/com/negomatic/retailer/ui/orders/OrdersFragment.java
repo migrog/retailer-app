@@ -1,7 +1,10 @@
 package com.negomatic.retailer.ui.orders;
 
+import static com.negomatic.retailer.App.context;
+
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +21,7 @@ import android.widget.ProgressBar;
 import com.negomatic.retailer.R;
 import com.negomatic.retailer.entity.OrderNote;
 import com.negomatic.retailer.entity.StateType;
+import com.negomatic.retailer.ui.orders.orderdetail.OrderDetailActivity;
 import com.negomatic.retailer.viewmodel.configuration.ConfigurationViewModel;
 
 import java.util.ArrayList;
@@ -42,7 +46,7 @@ public class OrdersFragment extends Fragment implements OrdersAdapter.OnItemList
 
     @Inject
     ViewModelProvider.Factory factory;
-    private OrdersViewModel mViewModel;
+    private OrderNoteViewModel mViewModel;
     private ConfigurationViewModel configurationViewModel;
 
     @BindView(R.id.recyclerView) RecyclerView recyclerView;
@@ -85,7 +89,7 @@ public class OrdersFragment extends Fragment implements OrdersAdapter.OnItemList
 
     private void configureViewModel(){
         configurationViewModel = new ViewModelProvider(this, factory).get(ConfigurationViewModel.class);
-        mViewModel = new ViewModelProvider(this,factory).get(OrdersViewModel.class);
+        mViewModel = new ViewModelProvider(this,factory).get(OrderNoteViewModel.class);
 
         configurationViewModel.initStateTypes();
         mViewModel.init();
@@ -124,6 +128,8 @@ public class OrdersFragment extends Fragment implements OrdersAdapter.OnItemList
 
     @Override
     public void onItemClick(View view, int position) {
-        //impl
+        Intent intent = new Intent(context, OrderDetailActivity.class);
+        intent.putExtra("orderNoteId", orders.get(position).getId());
+        startActivity(intent);
     }
 }

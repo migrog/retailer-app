@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.negomatic.retailer">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -23,7 +22,10 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-
+        <activity
+            android:name=".ui.orders.orderdetail.OrderDetailActivity"
+            android:exported="false"
+            android:theme="@style/Apptheme.ActionBar"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -90,8 +92,7 @@
         <activity
             android:name=".ui.inventory.viewitem.ViewItemActivity"
             android:label="Detalle de producto"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.cart.CartActivity"
             android:noHistory="true"
@@ -123,7 +124,7 @@
         <activity
             android:name=".ui.customers.viewcustomer.ViewCustomerActivity"
             android:label="Detalle de cliente"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

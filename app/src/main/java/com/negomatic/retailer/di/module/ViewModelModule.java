@@ -12,7 +12,7 @@ import com.negomatic.retailer.viewmodel.configuration.ConfigurationViewModel;
 import com.negomatic.retailer.ui.customers.CustomerViewModel;
 import com.negomatic.retailer.ui.inventory.InventoryViewModel;
 import com.negomatic.retailer.ui.catalog.CatalogViewModel;
-import com.negomatic.retailer.ui.orders.OrdersViewModel;
+import com.negomatic.retailer.ui.orders.OrderNoteViewModel;
 import com.negomatic.retailer.ui.unittypes.UnitTypeViewModel;
 import com.negomatic.retailer.viewmodel.FactoryViewModel;
 import com.negomatic.retailer.di.key.ViewModelKey;
@@ -45,8 +45,8 @@ public abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(OrdersViewModel.class)
-    abstract ViewModel bindOrdersViewModel(OrdersViewModel repoViewModel);
+    @ViewModelKey(OrderNoteViewModel.class)
+    abstract ViewModel bindOrdersViewModel(OrderNoteViewModel repoViewModel);
 
     @Binds
     @IntoMap

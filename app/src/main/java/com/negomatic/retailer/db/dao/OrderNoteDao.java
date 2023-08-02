@@ -8,6 +8,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Transaction;
 
+import com.negomatic.retailer.entity.Item;
 import com.negomatic.retailer.entity.OrderNote;
 import com.negomatic.retailer.entity.OrderNoteItem;
 
@@ -25,4 +26,11 @@ public interface OrderNoteDao {
 
     @Query("SELECT * FROM order_notes n ORDER BY n.createdAt DESC")
     LiveData<List<OrderNote>> ListOrder();
+
+    @Query("SELECT * FROM order_notes WHERE id = :id")
+    LiveData<OrderNote> getById(int id);
+
+    @Query("SELECT * FROM order_note_items WHERE orderNoteId = :orderId")
+    LiveData<List<OrderNoteItem>> getOrderNoteItems(int orderId);
+
 }
